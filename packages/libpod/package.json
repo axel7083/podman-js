@@ -6,6 +6,15 @@
   "license": "Apache-2.0",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/axel7083/podman-js",
+    "directory": "packages/libpod"
+  },
+  "author": "axel7083",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "vite build",
     "test": "vitest run --coverage --passWithNoTests"
