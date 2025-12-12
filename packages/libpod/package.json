@@ -1,6 +1,6 @@
 {
   "name": "@podman/libpod",
-  "description": "",
+  "description": "js client for podman",
   "version": "0.0.0",
   "type": "module",
   "license": "Apache-2.0",
