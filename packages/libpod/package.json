@@ -1,0 +1,23 @@
+{
+  "name": "@podman/libpod",
+  "description": "",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run --coverage --passWithNoTests"
+  },
+  "devDependencies": {
+    "@types/docker-modem": "^3.0.6",
+    "swagger-typescript-api": "^13.2.16"
+  },
+  "dependencies": {
+    "docker-modem": "^5.0.6"
+  },
+  "files": [
+    "dist"
+  ]
+}

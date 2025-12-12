@@ -1,0 +1,51 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+deleted file mode 100644
+index eb56653c9f0f8d181f43c58f77e499e58dbe7b59..0000000000000000000000000000000000000000
+diff --git a/dist/src-D-LZ3PGk.js b/dist/src-D-LZ3PGk.js
+index ca7a9e2f9b8832b7761558c87a4704606b443d7e..d6a5e1bcaf6dd404a498d01c145a7c98aef0067a 100644
+--- a/dist/src-D-LZ3PGk.js
++++ b/dist/src-D-LZ3PGk.js
+@@ -1805,8 +1805,7 @@ var SchemaRoutes = class {
+ 		}
+ 		return defaultType || this.config.Ts.Keyword.Any;
+ 	};
+-	getRequestInfoTypes = ({ requestInfos, parsedSchemas, operationId, defaultType }) => lodash.reduce(requestInfos, (acc, requestInfo, status) => {
+-		const contentTypes = this.getContentTypes([requestInfo]);
++	getRequestInfoTypes = ({ requestInfos, parsedSchemas, operationId, defaultType, contentTypes }) => lodash.reduce(requestInfos, (acc, requestInfo, status) => {
+ 		return [...acc, {
+ 			...requestInfo || {},
+ 			contentTypes,
+@@ -1829,7 +1828,8 @@ var SchemaRoutes = class {
+ 			requestInfos: responses,
+ 			parsedSchemas,
+ 			operationId,
+-			defaultType: this.config.defaultResponseType
++			defaultType: this.config.defaultResponseType,
++			contentTypes
+ 		});
+ 		const successResponse = responseInfos.find((response) => response.isSuccess);
+ 		const errorResponses = responseInfos.filter((response) => !response.isSuccess && response.type !== this.config.Ts.Keyword.Any);
+diff --git a/dist/src-DWf638kx.cjs b/dist/src-DWf638kx.cjs
+index d9d7743876e1f272c8c90032329398f861d05628..437ed36dcbfb96ee79f3a09bc8ef681c5ecc0536 100644
+--- a/dist/src-DWf638kx.cjs
++++ b/dist/src-DWf638kx.cjs
+@@ -1845,8 +1845,7 @@ var SchemaRoutes = class {
+ 		}
+ 		return defaultType || this.config.Ts.Keyword.Any;
+ 	};
+-	getRequestInfoTypes = ({ requestInfos, parsedSchemas, operationId, defaultType }) => lodash.default.reduce(requestInfos, (acc, requestInfo, status) => {
+-		const contentTypes = this.getContentTypes([requestInfo]);
++	getRequestInfoTypes = ({ requestInfos, parsedSchemas, operationId, defaultType, contentTypes }) => lodash.default.reduce(requestInfos, (acc, requestInfo, status) => {
+ 		return [...acc, {
+ 			...requestInfo || {},
+ 			contentTypes,
+@@ -1869,7 +1868,8 @@ var SchemaRoutes = class {
+ 			requestInfos: responses,
+ 			parsedSchemas,
+ 			operationId,
+-			defaultType: this.config.defaultResponseType
++			defaultType: this.config.defaultResponseType,
++			contentTypes,
+ 		});
+ 		const successResponse = responseInfos.find((response) => response.isSuccess);
+ 		const errorResponses = responseInfos.filter((response) => !response.isSuccess && response.type !== this.config.Ts.Keyword.Any);

@@ -1,0 +1,9 @@
+packages:
+  - packages/*
+
+patchedDependencies:
+  swagger-typescript-api@13.2.16: patches/swagger-typescript-api@13.2.16.patch
+
+onlyBuiltDependencies:
+  - cpu-features
+  - ssh2
