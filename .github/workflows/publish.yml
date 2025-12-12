@@ -33,4 +33,4 @@ jobs:
         run: pnpm run "/build:.*/"
 
       - name: Publish
-        run: pnpm publish -r --provenance --access public
+        run: pnpm publish -r --provenance --access public --no-git-checks
