@@ -6,15 +6,11 @@ import { join } from 'node:path';
 export const PODMAN_LIBPOD_SWAGGER_URL = 'https://storage.googleapis.com/libpod-master-releases/swagger-latest.yaml';
 
 export function swagger(): Plugin {
-    let root: string;
     return {
         name: 'vite-plugin-swagger',
         enforce: 'pre',
-        configResolved: (resolved) => {
-            root = resolved.root;
-        },
-        buildStart: async function() {
-            const generated = join(root, 'generated');
+        configResolved: async (resolved) => {
+            const generated = join(resolved.root, 'generated');
             await mkdir(generated, { recursive: true });
 
             const swagger = join(generated, 'swagger.yaml');
